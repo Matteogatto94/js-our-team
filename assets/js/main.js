@@ -2,6 +2,7 @@
 //MILESTONE 0: Creare l’array di oggetti con le informazioni fornite.
 //MILESTONE 1: Stampare su console le informazioni di nome, ruolo e la stringa della foto
 
+const riga = document.querySelector('.row');
 const team = [
     {
         name: 'Wayne Barnett',
@@ -41,4 +42,16 @@ for (let i = 0; i < team.length; i++) {
 for (const key in teamMember) {
    console.log(teamMember[key]);
 }
+
+const col = document.createElement('div');
+    col.classList.add('col');
+    const card = document.createElement('div');
+    card.classList.add('card');
+    col.append(card)
+    card.innerHTML = `
+    <img src=" assets/img/${teamMember.img}" alt="">
+    <p><strong>${teamMember.name}</strong></p>
+    <p>${teamMember.rule}</p>
+    `
+    riga.insertAdjacentElement('beforeend', col);
 }
